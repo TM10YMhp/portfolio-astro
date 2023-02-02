@@ -1,0 +1,26 @@
+---
+const { name } = Astro.props;
+
+const styleTag = `px-2 pt-1 rounded text-sm font-medium`
+
+const ColorTags = {
+  'Angular': 'bg-red-600 text-white',
+  'Astro': 'bg-purple-500',
+  'CodeMirror': 'bg-pink-600 text-white',
+  'JavaScript': 'bg-yellow-400 text-black',
+  'Jotai': 'bg-gray-300 text-black',
+  'MongoDB': 'bg-emerald-700 text-white',
+  'Next.js': 'bg-black text-white font-normal',
+  'Node.js': 'bg-lime-600 text-white',
+  'React': 'bg-indigo-900 text-cyan-300',
+  'Redux': 'bg-purple-700 text-white',
+  'Remark': 'bg-black text-white font-mono',
+  'RxJS': 'bg-pink-900 text-pink-400',
+  'Styled Components': 'bg-gradient-to-tr from-pink-600 to-amber-400 text-white',
+  'Tailwind CSS': 'bg-sky-600 text-white',
+  'TypeScript': 'bg-blue-600 text-white',
+}
+---
+<div class={`${styleTag} ${ColorTags[name]}`}>
+  {name}
+</div>

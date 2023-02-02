@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { skills } from '../config.js'
+import Content from '../components/Content.astro'
+import { Github, Telegram, Linkedin } from '../components/icons'
+import Section from "../components/Section.astro";
+const links = [
+  { href: "https://github.com/tm10ymhp", icon: Github },
+  { href: "https://t.me/tm10ymhp", icon: Telegram },
+  { href: "https://www.linkedin.com/in/tm10ymhp", icon: Linkedin },
+]
+---
+<BaseLayout>
+  <div class="relative h-80 flex flex-col justify-center items-start">
+    <div class="absolute w-full h-full overflow-hidden">
+      <video
+        class="blur-sm opacity-50 object-cover min-h-full min-w-full"
+        poster='/masthead-poster.png'
+        autoplay muted loop playsinline
+      >
+        <source src="/masthead.mp4" type="video/mp4" />
+        <source src="/masthead.webm" type="video/webm" />
+      </video>
+    </div>
+    <div class="w-full max-w-2xl px-10 mx-auto z-10">
+      <h2 class="text-4xl font-bold">
+        Alejandro Maturrano
+      </h2>
+      <p class="text-lg leading-relaxed">
+        Desarrollador de software
+      </p>
+      <div class="flex pt-5 gap-5 flex-row">
+        <a href="/projects" class="btn btn-outline uppercase">Proyectos</a>
+      </div>
+    </div>
+  </div>
+
+  <Content>
+    <p class="pt-3 pb-5 text-justify">
+      Alejandro es un freelance y full stack residiendo en Perú. Le apasiona
+      la programación, cada día aprende nuevas tecnologías además de contribuir a
+      proyectos de código abierto. Cuando no está programando le encanta ver
+      obras de arte y apreciar la naturaleza.
+    </p>
+
+    <Section title='Biografía'>
+      <div class='grid grid-cols-[50px_1fr]'>
+        <b>2003</b><p>Nace en Ica, Perú.</p>
+
+        <b>2018</b><p>Trabaja en Corporación Universal hasta el 2022.</p>
+            <b></b><p>Completó cursos de Java y Git en Udemy.</p>
+
+        <b>2019</b><p>Completó cursos de Vim en Udemy.</p>
+
+        <b>2020</b><p>Completó cursos de JavaScript en Udemy.</p>
+            <b></b><p>Trabaja como Freelance hasta la actualidad.</p>
+
+        <b>2022</b><p>Completa el bootcamp Full Stack en Henry.</p>
+            <b></b><p>Realizó prácticas en Team Proyecto X como full stack.</p>
+      </div>
+    </Section>
+
+    <Section title='Tecnologías'>
+      <ul class="list-disc sm:columns-3 md:columns-4 columns-2 mx-6">
+        {skills.map(skill => <li>{skill}</li>)}
+      </ul>
+    </Section>
+
+    <Section title='Contacto'>
+      <div class="flex flex-row flex-wrap justify-between">
+        {links.map(link => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex gap-2 rounded-lg transition-all py-1.5 pl-2 pr-3
+            w-fit font-medium hover:bg-base-300 hover:underline"
+          >
+            <link.icon /> @tm10ymhp
+          </a>
+        ))}
+      </div>
+    </Section>
+
+  </Content>
+</BaseLayout>

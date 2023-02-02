@@ -1,0 +1,6 @@
+---
+const { className = '' } = Astro.props
+---
+<div class={`px-10 py-6 max-w-2xl mx-auto ${className}`}>
+  <slot/>
+</div>

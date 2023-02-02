@@ -1,0 +1,55 @@
+---
+import { Theme } from '../components/icons'
+import { themes } from '../config.js'
+---
+<script>
+  const theme_selectors =
+    document.querySelectorAll("#theme-selector div[data-theme]");
+
+  theme_selectors.forEach((selector) => {
+    selector.addEventListener("click", () => {
+      const newTheme = selector.getAttribute("data-theme");
+
+      document.querySelector("html").setAttribute("data-theme", newTheme);
+      window.localStorage.setItem("data-theme", newTheme);
+    });
+  });
+</script>
+
+<div class="relative w-9" id="theme-selector">
+  <input class="hidden peer" type="checkbox" id="drop" />
+  <label
+    for="drop"
+    tabindex="0"
+    class="block cursor-pointer p-1.5 rounded border border-base-content/25
+    bg-base-300"
+  >
+    <Theme />
+  </label>
+  <div
+    class="border border-base-content/25 bg-base-300
+    absolute right-0 rounded-md max-h-96 overflow-y-auto mt-1 flex
+    flex-col gap-2 p-2 transition-all scale-0 peer-checked:scale-100
+    -translate-y-1/2 translate-x-1/2 peer-checked:translate-y-0
+    peer-checked:translate-x-0"
+  >
+    {
+      themes.map(theme => (
+        <div
+          data-theme={theme}
+          class="flex py-3 px-4 rounded-lg cursor-pointer"
+        >
+          <div class="flex-grow text-sm font-bold">
+            {theme}
+          </div>
+          <div class="flex flex-shrink-0 gap-1">
+            <div class="bg-primary w-2 rounded"></div>
+            <div class="bg-secondary w-2 rounded"></div>
+            <div class="bg-accent w-2 rounded"></div>
+            <div class="bg-neutral w-2 rounded"></div>
+          </div>
+        </div>
+      )
+    )}
+  </div>
+</div>

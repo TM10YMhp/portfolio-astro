@@ -1,0 +1,24 @@
+---
+import ThemeSelector from "./ThemeSelector.astro"
+
+const items = [
+  { href: "/", text: "Home" },
+  { href: "/projects", text: "Projects" },
+]
+---
+<header class="sticky top-0 z-20 backdrop-blur-lg">
+  <div class="flex justify-between items-center py-1 px-5 max-w-2xl mx-auto">
+    <ul class="flex gap-1.5">
+      {
+        items.map(item => (
+          <li>
+            <a class="p-2" href={item.href}>
+              {item.text}
+            </a>
+          </li>
+        )
+      )}
+    </ul>
+    <ThemeSelector />
+  </div>
+</header>

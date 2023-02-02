@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import Content from '../components/Content.astro'
+
+const projects = [
+  {
+    title: "UI Mockup - Notes",
+    img: "/projects/ui-mockup.png",
+    desc: `Maqueta de interfaz de usuario. Muestra un listado
+           de notas y una zona de visualización adaptable.`,
+    url: "#",
+    tags: ['Next.js', 'Jotai', 'Tailwind CSS', 'JavaScript']
+  },
+  {
+    title: "Pokedex Angular",
+    img: "/projects/pokedex-angular.png",
+    desc: `Pokedex adaptada a dispositivos móviles. Acceso a más de 800
+           pokémones con sugerencias.`,
+    url: "#",
+    tags: ['Angular', 'TypeScript', 'RxJS', 'Tailwind CSS']
+  },
+  {
+    title: "Markdown Editor",
+    img: "/projects/markdown-editor.png",
+    desc: `Editor de markdown con detección de lenguaje, resaltado de
+           sintaxis, y previsualización en tiempo real.`,
+    url: "#",
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'CodeMirror', 'Remark']
+  },
+  {
+    title: "Musicfy",
+    img: "/projects/musicfy.png",
+    desc: `Servicio de retransmisión de música. El usuario puede buscar
+           con filtros, añadir a favoritos y crear sus propias listas.`,
+    url: "#",
+    tags: ['React', 'Redux', 'Node.js', 'MongoDB', 'Styled Components',
+           'JavaScript']
+  },
+]
+---
+<BaseLayout title="Projects">
+  <Content>
+    <h1 class="text-2xl w-full font-bold">
+      Proyectos
+    </h1>
+    <div class='grid justify-items-center grid-cols-1 sm:grid-cols-2 gap-5 py-4'>
+      {
+        projects.map(project => (
+          <Card
+            title={project.title}
+            desc={project.desc}
+            url={project.url}
+            tags={project.tags}
+            img={project.img}
+          >
+          </Card>
+        ))
+      }
+    </div>
+  </Content>
+</BaseLayout>

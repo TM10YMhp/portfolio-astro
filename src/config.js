@@ -1,0 +1,58 @@
+// Place any global data in this file.
+// You can import this data from anywhere in your site by using the `import` keyword.
+export const SITE_TITLE = 'Alejandro Maturrano';
+export const SITE_DESCRIPTION = `
+  Alejandro Maturrano Portfolio
+`;
+export const skills = [
+  "Git",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Angular",
+  "Astro",
+  "Next.js",
+  "Node.js",
+  "MongoDB",
+  "PostgreSQL",
+  "Tailwind CSS",
+  "Chakra UI",
+  "Styled Components",
+  "HTML",
+  "CSS",
+  "LESS",
+  "SASS",
+  "Bootstrap",
+  "JQuery",
+]
+export const themes = [
+  'light',
+  'dark',
+  'cupcake',
+  'bumblebee',
+  'emerald',
+  'corporate',
+  'synthwave',
+  'retro',
+  'cyberpunk',
+  'valentine',
+  'halloween',
+  'garden',
+  'forest',
+  'aqua',
+  'lofi',
+  'pastel',
+  'fantasy',
+  'wireframe',
+  'black',
+  'luxury',
+  'dracula',
+  'cmyk',
+  'autumn',
+  'business',
+  'acid',
+  'lemonade',
+  'night',
+  'coffee',
+  'winter',
+]
